@@ -1,6 +1,6 @@
 # Alter
 SEBELUM 
-![](ALTER.png)
+![](aset/ALTER.png)
 # Menambahkan Kolom
 ## Struktur
 ```sql
@@ -11,7 +11,7 @@ ALTER TABLE nama_tabel ADD nama_colom varchar(10) AFTER nama_colom;
 ALTER TABLE mobil ADD batas_peminjaman varchar(10) AFTER peminjam;
 ```
 ## Hasil
-![](BATAS.png)
+![](aset/BATAS.png)
 ## Analisis
 `AFTER`: opsional untuk digunakan, jika tidak menggunakan klausa ini maka secara default kolom yang dibuat akan berada di akhir. Jika kolom ingin ditaruh pada awal kolommakagunakan klausa FIRST.
 ## Kesimpulan
@@ -31,7 +31,7 @@ ALTER TABLE mobil ADD batas_peminjaman varchar(10) AFTER peminjam;
  UPDATE mobil SET batas_peminjaman = "2024-04-24" WHERE peminjam IS NOT NULL;
 ```
 ### Hasil
-![](UPDATE.png)
+![](aset/UPDATE.png)
 ### Analisis
 - `UPDATE`: Ini adalah sebuah pernyataan SQL yang digunakan untuk memperbarui data pada tabel yang ada.
 - `mobil`: Ini adalah nama tabel yang akan diperbarui.
@@ -53,7 +53,7 @@ ALTER TABLE nama_tabel CHANGE nama_colom nama_colom_baru;
 ALTER TABLE mobil CHANGE batas_peminjaman deadline varchar(10);
 ```
 ## Hasil
-![](MENGUBAH.png)
+![](aset/MENGUBAH.png)
 ## Analisis
 - **`ALTER TABLE mobil`:** Mengidentifikasi tabel yang ingin dimodifikasi, yaitu tabel `mobil`.
 - **`CHANGE batas_peminjaman deadline`:** Mengubah nama kolom `batas_peminjaman` menjadi `deadline`.
@@ -71,7 +71,7 @@ ALTER TABLE nama_tabel modify nama_colom date;
 ALTER TABLE mobil modify deadline DATE;
 ```
 ## Hasil
-![](TIPE1.png)
+![](aset/TIPE1.png)
 ## Analisis
 - Perintah `ALTER TABLE` diawali dengan kata kunci `ALTER TABLE` diikuti dengan nama tabel yang ingin diubah, dalam hal ini `mobil`.
 - Kata kunci `MODIFY` digunakan untuk menentukan kolom yang ingin diubah. Dalam hal ini, kolom `deadline` akan dimodifikasi.
@@ -91,7 +91,7 @@ LINK WEB https://revou.co/panduan-teknis/sql-constraint
     -> ALTER deadline SET DEFAULT 'Ready';
 ```
 ## Hasil
-![](CONSTRAINT.png)
+![](aset/CONSTRAINT.png)
 ## Analisis
 - Perintah diawali dengan `ALTER TABLE` diikuti nama tabel yang ingin diubah, yaitu `mobil`.
 - Baris kedua menggunakan `ALTER` lagi untuk menargetkan kolom spesifik yang ingin diubah, yaitu `deadline`.
@@ -112,7 +112,7 @@ INSERT INTO mobil
 -> VALUES (6, "DD 2378 AZ", "ACFDT","PUTIH","MADA",NULL,500000);
 ```
 ### Hasil
-![](tambahan1.png)
+![](aset/tambahan1.png)
 ### Analisis    
 - Perintah `INSERT INTO` digunakan untuk menambahkan baris baru ke tabel `mobil`.
 - **(id_mobil, no_plat, no_mesin, warna, pemilik, peminjam, harga_rental)**:
@@ -134,7 +134,7 @@ ALTER TABLE mobil
 -> ALTER deadline DROP DEFAULT;
 ```
 ### Hasil
-![](MENGHAPUS1.png)
+![](aset/MENGHAPUS1.png)
 ### Analisis    
 - Perintah `ALTER TABLE` digunakan untuk mengubah struktur tabel.
 - `mobil` adalah nama tabel yang akan diubah.
@@ -152,7 +152,7 @@ ALTER TABLE nama_tabel DROP COLUMN nama_colom;
 ALTER TABLE mobil DROP COLUMN deadline;
 ```
 ### Hasil
-![](KOLOM1.png)
+![](aset/KOLOM1.png)
 ### Analisis
 - Perintah `ALTER TABLE` digunakan untuk mengubah struktur tabel.
 - `mobil` adalah nama tabel yang akan diubah.
@@ -171,11 +171,11 @@ ALTER TABLE nama_tabel RENAME TO nama_colo;
 ALTER TABLE mobil RENAME TO data_mobil;
 ```
 ### Hasil
-![](RENAME1.png)
+![](aset/RENAME1.png)
 ### Analisis
 - Perintah `ALTER TABLE` digunakan untuk mengubah struktur atau nama tabel yang ada.
 - `mobil` adalah nama tabel yang akan diubah.
 - Bagian `RENAME TO` menginstruksikan untuk mengganti nama tabel.
 - `data_mobil` adalah nama baru yang akan diberikan kepada tabel `mobil`.
 ### Kesimpulan
-Perintah `ALTER TABLE mobil RENAME TO data_mobil;` digunakan untuk mengganti nama tabel `mobil` menjadi `data_mobil`. Meskipun data dan struktur tabel tidak terpengaruh, semua referensi ke tabel tersebut dalam aplikasi dan skrip perlu diperbarui agar menggunakan nama baru. Operasi ini biasanya dilakukan untuk meningkatkan keterbacaan atau menyesuaikan dengan standar penamaan yang lebih baik.
+Perintah `ALTER TABLE mobil RENAME TO data_mobil;` digunakan untuk mengganti nama tabel `mobil` menjadi `data_mobil`. Meskipun data dan struktur tabel tidak terpengaruh, semua referensi ke tabel tersebut dalam aplikasi dan skrip perlu diperbarui agar menggunakan nama baru. Operasi ini biasanya dilakukan untuk meningkatkan keterbacaan atau menyesuaikan dengan standar penamaan yang lebih baik. 
